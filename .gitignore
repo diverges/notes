@@ -1,0 +1,18 @@
+# Operating system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local editor state and temporary files
+.vs/
+.idea/
+*.swp
+*.swo
+*~
+*.tmp
+
+# Local environment values; keep example files shareable
+.env
+.env.*
+!.env.example
+!.env.*.example

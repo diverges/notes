@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1180" viewBox="0 0 1600 1180">
+<defs>
+ <style>text{font-family:'Segoe UI',sans-serif;fill:#DED9C6;font-size:17px}.h{font-family:Georgia,serif;font-size:28px}.small{font-size:14px;fill:#ABA99B}.accent{fill:#DDCFA0}.label{font-size:14px;letter-spacing:2px;fill:#B8A367}.panel{fill:#242729;stroke:#8C7C43;stroke-width:1}.slot{fill:#352720;stroke:#77766D}.rule{stroke:#48433E}</style>
+ <symbol id="tree" viewBox="0 0 70 110"><path fill="#48433E" d="M30 65h9v45h-9z"/><path fill="#202D29" d="M35 0L6 50h13L0 83h70L50 50h14z"/><path fill="#384C3B" d="M35 0v83H0l19-33H6z"/></symbol>
+ <symbol id="bag" viewBox="0 0 30 30"><path fill="none" stroke="#DDCFA0" stroke-width="2" d="M8 9h14l3 18H5zM11 9V5h8v4M9 16h12"/></symbol>
+ <symbol id="shield" viewBox="0 0 30 30"><path fill="none" stroke="#DDCFA0" stroke-width="2" d="M5 4h20v12L15 27 5 16zM15 6v17"/></symbol>
+ <symbol id="skill" viewBox="0 0 30 30"><path fill="none" stroke="#DDCFA0" stroke-width="2" d="M6 25L22 5M11 7l12 11M5 10l5-5 15 15-5 5z"/></symbol>
+ <symbol id="settings" viewBox="0 0 30 30"><path fill="none" stroke="#DDCFA0" stroke-width="2" d="M5 7h20M5 15h20M5 23h20M10 3v8M21 11v8M12 19v8"/></symbol>
+ <symbol id="heart" viewBox="0 0 30 30"><path fill="#B7796E" d="M15 27L3 14V6l6-3 6 5 6-5 6 3v8z"/></symbol>
+ <symbol id="rock" viewBox="0 0 50 50"><path fill="#ABA99B" d="M8 34L17 9 34 6 44 30 30 43z"/><path fill="#DED9C6" d="M17 9L29 25 8 34z"/><path fill="#77766D" d="M29 25L44 30 30 43z"/></symbol>
+ <symbol id="stick" viewBox="0 0 50 50"><path stroke="#C18A60" stroke-width="6" d="M8 39L41 12M23 27L19 12"/><path stroke="#654332" stroke-width="2" d="M8 41L43 13"/></symbol>
+ <symbol id="sword" viewBox="0 0 50 50"><path fill="#ABA99B" d="M27 3l7 10-8 22-6-3z"/><path stroke="#C18A60" stroke-width="5" d="M15 31l18 6M23 35l-5 12"/></symbol>
+</defs>
+<rect width="1600" height="1180" fill="#181d1e"/>
+<text x="48" y="49" class="label">FIRST LIGHT / GAME UI REVIEW / 01 OCT 2026</text>
+<text x="48" y="94" class="h" style="font-size:38px">Worn materials. Clear decisions. Room for the forest.</text>
+<text x="48" y="128" class="small">Proposed design study, not a game capture. Illustrative state values. Layout fonts are placeholders, not selected production assets.</text>
+<text x="48" y="180" class="label">01 / EXPLORATION + BAG</text><text x="824" y="180" class="label">02 / COMBAT + HAZARD</text>
+<g transform="translate(48 200)">
+ <rect width="728" height="402" fill="#283630" stroke="#48433E"/>
+ <path fill="#384C3B" d="M0 240L180 190 350 267 490 110 728 226v176H0z"/>
+ <use href="#tree" x="70" y="50" width="90" height="160"/><use href="#tree" x="535" y="24" width="92" height="152"/><use href="#tree" x="300" y="35" width="70" height="125"/>
+ <rect class="panel" x="18" y="18" width="168" height="44"/>
+ <use href="#heart" x="28" y="26" width="26" height="26"/><rect x="66" y="27" width="108" height="25" fill="#59333A"/><text x="94" y="46">20 / 20</text>
+ <path fill="#8CA3B6" d="M342 190l16-6 12 10-4 30h-22z"/><circle cx="356" cy="178" r="10" fill="#ABA99B"/><path stroke="#48433E" stroke-width="8" d="M347 223v22m15-22 8 20"/>
+ <path fill="none" stroke="#B8A367" d="M302 263l25-9 25 9-25 9z"/>
+ <rect x="25" y="289" width="245" height="31" class="panel"/><text x="37" y="310" style="font-size:15px">Pick up Stick · RMB more</text>
+ <rect x="395" y="202" width="315" height="131" class="panel"/>
+ <text x="411" y="230" class="h" style="font-size:22px">Bag</text><text x="601" y="230" class="small">2 / 6 slots</text>
+ <g transform="translate(408 247)"><rect class="slot" width="43" height="46"/><use href="#stick" width="41" height="41"/><text x="29" y="43" class="small">4</text><rect class="slot" x="48" width="43" height="46"/><use href="#rock" x="50" width="41" height="41"/><text x="77" y="43" class="small">2</text><rect class="slot" x="96" width="43" height="46"/><rect class="slot" x="144" width="43" height="46"/><rect class="slot" x="192" width="43" height="46"/><rect class="slot" x="240" width="43" height="46"/></g>
+ <text x="411" y="318" class="small">The world continues while this is open.</text>
+ <rect x="18" y="337" width="269" height="47" fill="#242729"/><path stroke="#8C7C43" stroke-width="2" d="M18 337v47"/>
+ <text x="30" y="358" style="font-size:15px">+1 Stick</text><text x="30" y="377" class="small">Recent events · open history</text>
+ <g transform="translate(474 346)"><rect class="panel" width="236" height="38"/><use href="#bag" x="13" y="4" width="28" height="28"/><use href="#shield" x="72" y="4" width="28" height="28"/><use href="#skill" x="131" y="4" width="28" height="28"/><use href="#settings" x="190" y="4" width="28" height="28"/><path stroke="#E1BC8B" stroke-width="2" d="M8 37h40"/></g>
+</g>
+<g transform="translate(824 200)">
+ <rect width="728" height="402" fill="#283630" stroke="#48433E"/>
+ <path fill="#384C3B" d="M0 272L210 128 381 215 520 189 728 259v143H0z"/>
+ <use href="#tree" x="45" y="56" width="90" height="160"/><use href="#tree" x="578" y="30" width="92" height="152"/>
+ <rect x="18" y="18" width="168" height="44" class="panel"/><use href="#heart" x="28" y="26" width="26" height="26"/><rect x="66" y="27" width="108" height="25" fill="#302027"/><rect x="66" y="27" width="59" height="25" fill="#8C4D4B"/><text x="94" y="46">11 / 20</text>
+ <rect x="251" y="18" width="226" height="74" class="panel"/><text x="268" y="43" class="h" style="font-size:22px">Queen Spider</text><text x="268" y="64" class="small">Engaged · hostile</text><rect x="268" y="76" width="191" height="4" fill="#48433E"/><rect x="268" y="76" width="116" height="4" fill="#B7796E"/>
+ <path fill="#8CA3B6" d="M295 211l16-6 12 10-4 30h-22z"/><circle cx="309" cy="199" r="10" fill="#ABA99B"/><path stroke="#48433E" stroke-width="8" d="M300 244v22m15-22 8 20"/>
+ <ellipse cx="417" cy="226" rx="21" ry="16" fill="#242729"/><path fill="none" stroke="#242729" stroke-width="5" d="M405 223l-27-17-14 14m43 10-34 3-7 20m62-30 24-17 13 17m-37 9 32 1 10 18"/>
+ <text x="400" y="196" class="accent">BLOCK</text>
+ <path d="M478 276l57-22 60 22-57 24z" fill="#315055" stroke="#B8A367" stroke-width="3" stroke-dasharray="6 4"/>
+ <text x="473" y="324" style="font-size:15px">Acid falling · leave marked ground</text>
+ <rect x="18" y="344" width="344" height="40" class="panel"/><text x="30" y="370" style="font-size:15px">Engaged · move away to disengage</text>
+ <g transform="translate(474 346)"><rect class="panel" width="236" height="38"/><use href="#bag" x="13" y="4" width="28" height="28"/><use href="#shield" x="72" y="4" width="28" height="28"/><use href="#skill" x="131" y="4" width="28" height="28"/><use href="#settings" x="190" y="4" width="28" height="28"/></g>
+</g>
+<text x="48" y="639" class="small">Keep six slots and four navigation buttons. Collapse quiet history; reveal reasons beside actions.</text>
+<text x="824" y="639" class="small">Target identity and health. No combat cast bar or overall-level rating.</text>
+<g transform="translate(48 686)">
+ <rect class="panel" width="480" height="280"/><text x="20" y="35" class="h">Crafting bench</text><text x="438" y="34">×</text>
+ <text x="20" y="65" class="small">Place materials left to right. Order matters.</text>
+ <g transform="translate(24 91)"><rect class="slot" width="61" height="64"/><text x="24" y="39">1</text><rect class="slot" x="75" width="61" height="64"/><text x="99" y="39">2</text><rect class="slot" x="150" width="61" height="64"/><text x="174" y="39">3</text><text x="232" y="39">→</text><rect class="slot" x="272" width="61" height="64"/><text x="287" y="39" class="small">—</text></g>
+ <text x="24" y="185">No combination yet</text><text x="24" y="211" class="small">Recipes stay hidden. A matched result shows its name.</text>
+ <path class="rule" d="M20 228h440"/><text x="24" y="256" class="small">Matched but blocked: show the actual requirement.</text>
+</g>
+<g transform="translate(560 686)">
+ <rect class="panel" width="480" height="280"/><text x="20" y="35" class="h">Equipment detail</text>
+ <use href="#sword" x="20" y="57" width="58" height="65"/><text x="92" y="81">Stone Sword</text><text x="92" y="108" class="small">Right hand · base damage 3–5</text>
+ <path class="rule" d="M20 137h440"/><text x="20" y="165">Attack interval</text><text x="370" y="165">3 sec</text>
+ <text x="20" y="198">Strength and enemy defence affect actual damage.</text>
+ <text x="20" y="230" class="small">Compare against equipped gear before choosing Equip.</text><text x="20" y="255" class="small">Never imply cosmetic gear grants a combat bonus.</text>
+</g>
+<g transform="translate(1072 686)">
+ <rect class="panel" width="480" height="280"/><text x="20" y="35" class="h">Skills detail</text>
+ <text x="20" y="80">Weapon Proficiency</text><text x="391" y="80">Lv. 1</text><rect x="20" y="94" width="440" height="4" fill="#48433E"/><rect x="20" y="94" width="108" height="4" fill="#B8A367"/>
+ <text x="20" y="137">Helps your attacks get past an enemy’s Block.</text><text x="20" y="171">Improves when an attack lands.</text>
+ <path class="rule" d="M20 194h440"/><text x="20" y="227" class="small">Show current XP and XP to next level on inspection.</text><text x="20" y="254" class="small">Explain skills; keep undiscovered recipes hidden.</text>
+</g>
+<text x="48" y="1020" class="label">MATERIAL + FEEDBACK LANGUAGE</text>
+<rect x="48" y="1042" width="34" height="34" fill="#242729" stroke="#77766D"/><text x="93" y="1065">Charcoal</text><rect x="242" y="1042" width="34" height="34" fill="#DED9C6"/><text x="287" y="1065">Bone</text><rect x="409" y="1042" width="34" height="34" fill="#B8A367"/><text x="454" y="1065">Worn brass</text><rect x="614" y="1042" width="34" height="34" fill="#B7796E"/><text x="659" y="1065">Harm</text><rect x="785" y="1042" width="34" height="34" fill="#91A07A"/><text x="830" y="1065">Growth</text>
+<text x="48" y="1114" class="small">Subtle edge wear only. Crisp text above world effects. Every warning has words or shape as well as color.</text>
+<text x="48" y="1144" class="small">Sound proposal: cloth open/close · dry selection tap · restrained failure knock · quiet existing pickup/gear cues · rare warm level-up chime.</text>
+</svg>
+
