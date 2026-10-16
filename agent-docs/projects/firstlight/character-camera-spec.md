@@ -6,4 +6,4 @@ The authoritative draft is in the repository specification folder. Continue edit
 
 ## Navigation
 
-- [006-character-camera](D:/Repos/notes/projects/firstlight/specs/006-character-camera.md): stylized humanoid, Mixamo idle/walk, Cinemachine and Bootstrap testing.
+- [006-character-camera](../../../projects/firstlight/specs/006-character-camera.md): stylized humanoid, Mixamo idle/walk, Cinemachine and Bootstrap testing.

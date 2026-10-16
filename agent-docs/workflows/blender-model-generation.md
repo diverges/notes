@@ -6,8 +6,8 @@ Validated: 2026-09-28 in FirstLight with Blender 4.0.1, Unity 6000.3.20f1 and Mi
 
 | Resource | Purpose |
 | --- | --- |
-| [FirstLight character authoring](D:/Repos/FirstLight/Docs/character-authoring.md) | Working source, commands, file ownership and review procedure. |
-| [FirstLight spec 006](D:/Repos/notes/projects/firstlight/specs/006-character-camera.md) | Accepted character/camera and dated validation evidence. |
+| FirstLight character authoring (`FirstLight: Docs/character-authoring.md`) | Working source, commands, file ownership and review procedure. |
+| [FirstLight spec 006](../../projects/firstlight/specs/006-character-camera.md) | Accepted character/camera and dated validation evidence. |
 | [Unity implementation gotchas](../learnings/unity/gotchas.md) | Observed failures and scoped corrections, including disconnected generated limbs. |
 
 ## Establish the visual and technical contract

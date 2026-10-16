@@ -1,49 +1,74 @@
-# [Single technical or design issue]
+# <Bug Title>
 
-Status: Draft
-Updated: [Date]
+- **Tracking:** <Jira key / issue link, or "none">
+- **Code repository:** <repo name; its local path is per machine — plain text, never a link>
+- **Codebase:** <name of this codebase's agent-docs folder — read before planning, update as you learn>
+- **Working branch:** <branch used for the fix to be reviewed>
+- **Severity:** <blocker | critical | major | minor>
+- **Status:** Open <!-- Open → Investigating → Root-caused → Fix proposed → In review → Done -->
 
-## Problem statement
+## Summary
 
-[Describe the single issue, who it affects, and its impact. Keep unrelated improvements out of scope.]
+_One or two sentences: what's broken and its impact. One issue only — keep unrelated
+improvements out._
 
-Expected behavior: The [system or actor] shall [required behavior] when [condition].
+## Environment
 
-[Use "shall" for mandatory behavior or "should" for a recommendation. Ground the expectation in an existing requirement or stated design intent; identify uncertainty rather than inventing a rule.]
+_Where it reproduces: version/build, platform, config, etc._
 
-## Repro
+## Steps to Reproduce
 
-Environment: [Relevant version, configuration, device, or design context.]
+1. ...
 
-### Reproduction scenario
+**Expected:** _what should happen._
 
-- Given: [Starting state and data needed to expose the issue.]
-- When: [Exact action or sequence of actions.]
-- Then: [Expected observable outcome.]
+**Actual:** _what actually happens, how often, and the evidence (logs, screenshots)._
 
-### Observed result
+## Root Cause
 
-[Describe what actually happens, how often, and the evidence. Include logs, screenshots, or observations where useful.]
+_The confirmed cause, or a clearly labelled **Hypothesis:** until it's confirmed._
 
-[For a design issue, describe the interaction or review scenario that demonstrates the problem. If it cannot be reproduced, record what was tried and what remains unknown.]
+## Fix
 
-## Proposal
+_Proposed / applied fix (code changes live in the code repo above), and the behavior
+it risks regressing._
 
-[Explain the confirmed cause or clearly label the working hypothesis. Describe the smallest correction and why it addresses the issue.]
+## Test Plan
 
-- Risks: [Affected behavior and likely regressions.]
-- Verification: [How the reproduction scenario will pass after the fix and what else needs checking.]
-- Open questions: [Unknowns that affect the proposed correction.]
+_Strategy for validating the fix and preventing regression. State the fixed
+behavior as a testable claim (Given/When/Then) so it doubles as a regression test._
 
-[Use a Mermaid diagram only if it clarifies the faulty or corrected behavior.]
+- **Regression claim:** **Given** <repro state> **when** <trigger> **then** <fixed result>.
+- **Unit tests:** _what to cover in isolation._
+- **Integration tests:** _how components/systems are verified together._
+- **Manual tests:** _steps to verify by hand._
 
-## Task list
+## Tasks
 
-- [ ] Reproduce or document [specific evidence of the issue].
-- [ ] Test [hypothesis] and establish the cause.
-- [ ] Apply [bounded correction].
-- [ ] Repeat the repro and verify [relevant regression checks].
-- [ ] Record the result and update affected notes or documentation.
+- [ ] ...
 
-[Replace prompts with concrete tasks. For a subjective design issue, identify the review criterion and reviewer rather than claiming an automated check proves success.]
+## Verification
 
+_Checks actually run and their results; what remains unverified or awaits human review.
+Fill in as work lands — never record a check that didn't run._
+
+- _<check> — <result> (<branch/commit>)_
+
+## Definition of Done
+
+- [ ] Root cause identified and documented above.
+- [ ] Fix verified against the repro and covered by a regression test.
+- [ ] Verification records the checks that ran and anything left unverified.
+- [ ] Durable lessons recorded in the codebase's agent docs (`gotchas.md`).
+- [ ] Traceability below is filled in.
+- [ ] Status set to the correct lifecycle value.
+
+## Traceability
+
+- **Tracking:** <Jira key / issue>
+- **Code repo PR(s):** <pull request(s) fixing this>
+- **Commits:** <SHAs, once landed>
+
+## References
+
+_External URLs, related bugs/tickets, ongoing notes._

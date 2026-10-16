@@ -9,11 +9,11 @@ Use the PowerShell commands below. For a check-only request, skip creation. Keep
 
 ## Choose the folders
 
-Use the user's local shared-folder path. This machine uses D:\Repos\notes; confirm the path on another computer. Ensure the shared knowledge root documented in AGENTS.md matches the selected folder's agent-docs directory, so chats in other repositories can resolve it explicitly.
+The notes repository's path differs per machine (for example `D:\Repos\notes`). Confirm it with the user, or use the folder containing this repository's `AGENTS.md`, and set it below before running anything.
 
 ```powershell
 $ErrorActionPreference = 'Stop'
-$sharedRoot = 'D:\Repos\notes'
+$sharedRoot = '<path to the notes repository on this machine>'
 $codexRoot = if ($env:CODEX_HOME) { $env:CODEX_HOME } else {
     Join-Path $env:USERPROFILE '.codex'
 }
@@ -25,7 +25,7 @@ Confirm the shared files are readable:
 
 ```powershell
 'AGENTS.md', 'agent-docs\INDEX.md',
-'agent-docs\template\feature-spec.md', 'agent-docs\template\bug.md' |
+'agent-docs\template\spec.md', 'agent-docs\template\bug.md' |
     ForEach-Object {
         $pathToCheck = Join-Path $sharedRoot $_
         Get-Item -LiteralPath $pathToCheck | Select-Object FullName, Length
@@ -62,11 +62,11 @@ Repeat the link inspection and read through the links:
 ```powershell
 Get-Content -LiteralPath (Join-Path $codexRoot 'AGENTS.md') -TotalCount 5
 Get-Content -LiteralPath (Join-Path $codexRoot 'agent-docs\INDEX.md')
-Get-Item -LiteralPath (Join-Path $codexRoot 'agent-docs\template\feature-spec.md'), (Join-Path $codexRoot 'agent-docs\template\bug.md')
+Get-Item -LiteralPath (Join-Path $codexRoot 'agent-docs\template\spec.md'), (Join-Path $codexRoot 'agent-docs\template\bug.md')
 ```
 
 Report whether both targets are correct and readable, and whether an override shadows the guidelines. Do not claim that a running chat has loaded them.
 
-Start a fresh chat in another project and ask: "Read my shared guidelines and locate my feature and bug templates."
+Start a fresh chat in another project and ask: "Read my shared guidelines and locate my spec and bug templates."
 
 On a new machine, open this SKILL.md by path and ask the agent to follow it, or run the commands yourself. The skill cannot discover itself before installation. Link only AGENTS.md and agent-docs, not the whole .codex folder. Links neither configure Drive sync nor grant write permissions.

@@ -29,9 +29,9 @@ These preferences apply across models, tools, and projects. Use them as defaults
 
 Keep documentation in a code repository focused on the project itself and primarily user-authored. By default, save generated Markdown, specs, and notepad-style planning in this notes repository: project documents under `projects/<project-name>/`, and context snapshots or agent notes under `agent-docs/projects/<project-name>/`. Follow explicit user requests to edit repository documentation; do not move user-authored documentation merely because it is Markdown.
 
-The shared knowledge root on this machine is `D:\Repos\notes\agent-docs`, also accessible through `C:\Users\sotol\.codex\agent-docs`. All `agent-docs/` references in these guidelines mean that shared root, regardless of the current repository or chat working directory. For example, work in `D:\Repos\GMTK-Jam-2023` uses `D:\Repos\notes\agent-docs\projects\gmtk-jam-2023\`, not a folder inside the game repository.
+The shared knowledge root is the `agent-docs` folder of the notes repository that contains this `AGENTS.md`; its local path differs per machine (for example `D:\Repos\notes\agent-docs`), and it is also reachable through the agent profile's `agent-docs` link (for example `~/.codex/agent-docs`). All `agent-docs/` references in these guidelines mean that shared root, regardless of the current repository or chat working directory. For example, work in a `GMTK-Jam-2023` code repository uses `agent-docs/projects/gmtk-jam-2023/` in the notes repository, not a folder inside the game repository.
 
-Human- and agent-authored project documents, including specs, live separately in `D:\Repos\notes\projects\<project-name>\`. References to `projects/<project-name>/specs/` mean this notes repository's root-level folder, never the current code repository or `agent-docs/projects/`. On another machine, resolve the verified shared `agent-docs` link to its actual target and use its parent repository's `projects/` folder. Keep context snapshots, agent decisions, and response-supporting notes in `agent-docs/projects/<project-name>/`. Use the same canonical project name in both locations, and read applicable instructions and agent context before working on a project. Load existing specs only when the user asks to read, review, update, or work from them; ordinary project work and links in context do not trigger spec loading.
+Human- and agent-authored project documents, including specs, live separately in the notes repository's root-level `projects/<project-name>/`. References to `projects/<project-name>/specs/` mean this notes repository's root-level folder, never the current code repository or `agent-docs/projects/`. On another machine, resolve the verified shared `agent-docs` link to its actual target and use its parent repository's `projects/` folder. Keep context snapshots, agent decisions, and response-supporting notes in `agent-docs/projects/<project-name>/`. Use the same canonical project name in both locations, and read applicable instructions and agent context before working on a project. Load existing specs only when the user asks to read, review, update, or work from them; ordinary project work and links in context do not trigger spec loading.
 
 Before using shared notes, verify that the root and its `INDEX.md` exist and read the index through the verified absolute path. On another machine, resolve `agent-docs` under `CODEX_HOME` when set, otherwise under the user's `.codex` directory; inspect its link target and verify readability. If it is missing or inaccessible, report that fact rather than guessing a repository-relative location or claiming an expected path exists. Create documents as needed rather than filling the structure with empty files.
 
@@ -45,11 +45,13 @@ agent-docs/
   skills/                  # Portable setup and maintenance skills
     setup-agent-guidelines/
       SKILL.md
-  template/                # Reusable Markdown starting points
+  template/                # Reusable Markdown starting points (shared with the work planning repo)
     README.md              # Template selection and usage
-    feature-spec.md        # Feature requirements, scenarios, and tasks
+    spec.md                # One feature/change: proposal, acceptance criteria, verification
+    one-pager.md           # Proposal: use cases, requirements, scenarios
     bug.md                 # Single technical or design issue
     game-design-document.md # Game vision, rules, scope, and design decisions
+    agent-docs/            # Starter set for a project's agent-docs folder
   learnings/               # Reusable lessons across projects
     <topic>.md             # Small standalone subject
     <subject>/             # Larger collection, created as needed
@@ -64,15 +66,24 @@ agent-docs/
   projects/               # Project-specific memory for agent sessions
     README.md             # Project selection and session writing rules
     <project-name>/
-      CONTEXT.md           # Goals, constraints, current state, next steps
-      decisions.md         # Decisions, rationale, and tradeoffs
+      README.md            # Index: identity, every file and when to read it (read first)
+      CONTEXT.md           # Current state only, <= 40 lines, overwritten each session
+      overview.md          # Architecture map, when the project has code
+      decisions.md         # Dated decisions, rationale, and tradeoffs
+      glossary.md          # Project terms, when there are enough to need one
       learnings.md         # Agent workflows, pitfalls, and supporting evidence
+      history.md           # Archived dated log; never loaded by default
+      <topic>.md           # Reviews, research, concept notes; listed in README
 
 ```
 
 - Before substantial work, consult `agent-docs/INDEX.md` and relevant project notes. Read additional material only as needed.
 - Use the shared index and a collection's table of contents to select a domain, file, and relevant sections. Read applicable folder instructions before editing. Each section should explain its essential context and findings without requiring a chain of links. Do not bulk-load notes or whole histories. For Unity work, start with `agent-docs/learnings/unity/README.md` and its folder `AGENTS.md`.
-- Use the self-contained templates in `agent-docs/template/`: `game-design-document.md` for game design, `feature-spec.md` for feature work, and `bug.md` for a single technical or design issue. Copy into project notes, keep the main sections, and mark unknowns rather than inventing details. Do not fetch upstream templates.
+- Use the self-contained templates in `agent-docs/template/`: `spec.md` for a feature or change, `one-pager.md` for a proposal that needs use cases and scenarios first, `bug.md` for a single technical or design issue, and `game-design-document.md` for game design. Copy into project notes, keep the main sections, and write `TBD — <what's needed to resolve>` rather than inventing details. Do not fetch upstream templates. `spec.md`, `one-pager.md`, `bug.md` and `agent-docs/` are kept identical with the work planning repo's templates.
+- Before marking a one-pager or a high-risk spec Spec-ready (save or serialized data, cross-system ownership, a new player-facing flow, or a core-loop change), run product-team in spec review mode where the tool supports subagents.
+- Never link into a code repository by absolute path; its location differs per machine. Refer to its files as plain text, for example `FirstLight: Assets/Scripts/World/WorldGameManager.cs`. Links between notes stay relative.
+- When two notes, specs, or rules contradict each other, pick one (the most recent or best tested), say why, and flag the other. Do not blend them into something that satisfies neither.
+- Reviews keep a findings table (`ID | Finding | Status | Evidence`, status `open`, `fixed`, `deferred` or `rejected`). Before reviewing an area again, read the earlier review's open findings, update their status, and do not re-raise settled ones.
 - When asked to write a spec, save it by default under the shared `projects/<project-name>/specs/`, not in the project's code repository. Keep supporting documents together in a spec folder when needed. Follow an explicit user-requested destination; existing repository-local specs alone do not override this default. Reuse existing spec names and numbering, and avoid duplicate authoritative copies.
 - Name new spec files and folders `000-<name>`: a three-digit, zero-padded sequential number and a descriptive lowercase, hyphenated name, such as `001-player-movement.md` or `001-player-movement/`. Continue after the highest existing project spec number, including specs still in the code repository; start at `001` if none exist. Preserve identifiers when updating or moving existing specs.
 - Record findings that could change future decisions, not routine activity logs. Include context, evidence, applicability, and whether a lesson is tentative or validated.
@@ -95,9 +106,9 @@ agent-docs/
 
 - Use the shared `agent-docs/projects/<project-name>/` folder for project-specific notes, including lessons about agent tools, debugging, validation, environment constraints, and collaboration. Follow [the project memory guide](agent-docs/projects/README.md).
 - Resolve shared `agent-docs/` beside the global guidelines file or through its configured link, not relative to another project's working directory. Reuse the project's existing folder; identify it by repository or canonical project identity, not by chat title, branch, or worktree. Respect project-specific documentation rules and link to existing authoritative notes instead of duplicating them.
-- At the start of substantive work, read the shared index and the project's `CONTEXT.md`; consult relevant decisions and learnings before choosing an approach. Create a project folder and context when substantive work first needs durable notes.
+- At the start of substantive work, read the shared index, then the project's `README.md` and `CONTEXT.md`. Read the other project files only when the task touches them, using the README's "read when" column; never load `history.md` by default. Create a project folder and context when substantive work first needs durable notes.
 - Identify the project from the user's repository/project/repo name or the current repository's identity. Match it against existing project folders and their `CONTEXT.md` identities, ignoring case and ordinary spacing or hyphen differences; reuse the canonical folder rather than creating a new spelling. Branches, worktrees, and chat titles do not define separate projects. Read that folder's applicable instructions and agent context before planning or editing. Load existing specs only when the user asks to read, review, update, or work from them. Ask only when multiple project identities remain plausible.
-- During work, record consequential decisions and reusable agent findings while evidence is available. Before ending a substantive session or handing work off, update `CONTEXT.md` with the current state, verification, unresolved issues, and concrete next steps. Update `learnings.md` when the session reveals a reusable lesson; do not invent lessons or write routine chat transcripts.
+- During work, record consequential decisions and reusable agent findings while evidence is available. Before ending a substantive session or handing work off, rewrite `CONTEXT.md` with the current state, verification, unresolved issues, and concrete next steps. Overwrite it rather than appending: dated detail worth keeping goes to `history.md`, durable choices to `decisions.md`, reusable lessons to `learnings.md`. Update `learnings.md` when the session reveals a reusable lesson; do not invent lessons or write routine chat transcripts.
 - Keep notes concise, dated, and evidence-backed. Reconcile stale guidance, preserve unrelated contributions, and label hypotheses. Do not store secrets or sensitive raw outputs. If shared notes are not writable, report the limitation and provide the proposed update without claiming it was saved.
 
 ## Maintaining These Guidelines

@@ -13,7 +13,7 @@ For example, “jumping should feel forgiving” is intent. “A jump pressed in
 
 ## Extend the existing feature record
 
-Use the existing feature template in `agent-docs/template/feature-spec.md`, retaining problem, proposal, use cases, requirements, scenarios, and tasks. The finished record should explain the feature without requiring other notes. Include these details only where relevant:
+Use `agent-docs/template/spec.md` for a feature (or `one-pager.md` when it first needs use cases, requirements and scenarios), keeping its main sections. The finished record should explain the feature without requiring other notes. Include these details only where relevant:
 
 - Player intent and scope: the experience sought, evidence for the problem, and what the change excludes.
 - Scenarios: starting state, player action, outcome, relevant interruption/failure cases, and restart behavior.

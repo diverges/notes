@@ -1,7 +1,7 @@
 # Specification Templates for Agent Collaboration
 
 Researched: 2026-09-26
-Status: Historical research. The selection below was superseded by two self-contained local templates: feature-spec.md and bug.md. External links are provenance only, not dependencies or instructions to refresh the templates.
+Status: Historical research. The selection below was superseded by the self-contained local templates (2026-10-16: spec.md, one-pager.md and bug.md, shared with the work planning repo). External links are provenance only, not dependencies or instructions to refresh the templates.
 
 ## Findings
 

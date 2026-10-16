@@ -1,22 +1,24 @@
 # Templates
 
-These self-contained Markdown templates are maintained locally. Using them does not require fetching external documents or following an external framework.
+Self-contained Markdown starting points. `spec.md`, `one-pager.md`, `bug.md` and
+`agent-docs/` are **kept identical** with the work planning repo's `_templates/` —
+change them in both places or neither. Don't refresh them from upstream sources.
 
-- [Feature specification](feature-spec.md): feature work covering the problem, proposal, Mermaid use-case diagram, use cases, requirements, scenarios, and tasks.
-- [Bug](bug.md): one technical or design issue covering the problem, reproduction, proposed correction, and tasks.
-- [Game design document](game-design-document.md): a game's intended experience, loop, rules, content, scope, and design decisions. Start with its concept pass and expand relevant sections before production; engine-independent and usable by solo developers or small teams.
+| Template | Use for |
+| --- | --- |
+| [spec.md](spec.md) | One implementable feature or change: proposal, acceptance criteria, test plan, verification. |
+| [one-pager.md](one-pager.md) | A proposal that needs use cases, requirements (R.n) and scenarios (S.n) before it's split into specs. |
+| [bug.md](bug.md) | One technical or design issue: repro, root cause (or labelled hypothesis), fix, regression claim. |
+| [game-design-document.md](game-design-document.md) | A game's intended experience, loop, rules, scope and design decisions (notes only). |
+| [agent-docs/](agent-docs/README.md) | Starter set for a project's agent docs folder (`agent-docs/projects/<project>/`). |
 
 ## Usage
 
-- Resolve and load the canonical project folder using the [project memory guide](../projects/README.md) before writing.
-- Copy feature and bug specs into the shared `projects/<project-name>/specs/` by default, with a descriptive filename or a subfolder for supporting documents. Keep the GDD under the root-level projects/<project-name>/ folder unless its existing authoritative location differs. Follow an explicit user-requested destination; existing repository-local specs alone do not override the default. Update an existing spec in place unless migration is requested, and avoid duplicate authoritative copies.
-- Replace prompts with concrete information. Mark unknowns explicitly and keep the document proportional to the work.
-- Name new spec files and folders `000-<name>`, such as `001-player-movement.md` or `001-player-movement/`. Use a three-digit, zero-padded sequence and a lowercase, hyphenated name; continue after the highest existing project spec number, including repository-local specs, or start at `001` when none exist. Preserve existing identifiers when editing or migrating specs.
-- Retain the main sections; remove irrelevant example rows and optional details.
+- Resolve the canonical project first (see the [project memory guide](../projects/README.md)).
+- Specs and bugs go in root-level `projects/<project-name>/specs/` as `NNN-<name>.md`
+  (three-digit, continue after the highest existing number, never renumber). The GDD
+  stays at its existing authoritative location.
+- Replace prompts with concrete content. Write `TBD — <what's needed to resolve>` for
+  unknowns; omit sections that don't apply rather than padding them.
 - Keep requirements and expected outcomes separate from the proposed implementation.
-- Keep task checkboxes current and record verification evidence in the working document.
-- Use relative links to supporting local notes and Mermaid when a diagram helps.
-- Update these local templates deliberately; do not refresh them from upstream sources.
-
-Use a GDD to define the game and its design choices, a feature specification to detail one feature's implementation requirements, and a bug record for a particular problem. Keep the GDD's player-facing rules understandable without opening the other records.
-
+- Keep task checkboxes and the Verification section current; record only checks that ran.

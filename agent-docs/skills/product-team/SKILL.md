@@ -1,6 +1,6 @@
 ---
 name: product-team
-description: Coordinate designer, engineer, architect, and product manager subagents for a requested team review, feature plan, or implementation. Use when the user asks for these roles together or invokes product-team; ordinary solo tasks do not need this workflow.
+description: Coordinate designer, engineer, architect, and product manager subagents for a requested team review, feature plan, or implementation. Use when the user asks for these roles together or invokes product-team. Also use to pressure-test a draft spec, one-pager, or bug before it's marked Spec-ready (spec review mode). Ordinary solo tasks do not need this workflow.
 ---
 
 # Product team
@@ -30,8 +30,13 @@ Require concise handoffs covering result, evidence and checks actually performed
 
 Before reporting completion, have the PM reconcile documentation with delivered behavior and verification evidence, including remaining unchecked tasks and unresolved acceptance. The parent verifies this handoff along with the implementation. Report the authoritative document path and meaningful verification limits. Save consequential decisions and state in the project's established memory, following its existing rules, without duplicating the specification.
 
+## Spec review mode
+
+When the subject is a draft spec, one-pager, or bug, treat the request as read-only review unless edits are assigned. Tell each role the template the document follows and its section headings. Each role returns a `Section | Change | Why` table limited to its lane. The parent merges them into one table `Section | Change | From (roles) | Why` in template order, resolving conflicts with a stated reason. Unresolved choices become `TBD — <what's needed to resolve>` lines under **Open Questions**. When edits are authorized, the PM applies the accepted changes in place; the document's **Status** stays the user's call.
+
 ## Invocation examples
 
 - "Use product-team to review this proposal. Return recommendations without editing the project."
 - "Use product-team to implement this feature and verify its acceptance criteria."
 - "Use the designer and architect roles to assess this feature before implementation."
+- "Use product-team in spec review mode on spec 036 before I mark it Spec-ready."
